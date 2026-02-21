@@ -1,0 +1,12 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Django Backend for a Flash Card App"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=6.0.2",
+    "djangorestframework>=3.16.1",
+    "drf-nested-routers>=0.95.0",
+    "drf-spectacular[sidecar]>=0.29.0",
+]
