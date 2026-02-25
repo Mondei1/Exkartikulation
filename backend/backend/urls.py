@@ -19,8 +19,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from django.conf import settings
 
 urlpatterns = [
-    path("v1/", include('backend.flash_cards.urls')),
-    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path("v1/", include('backend.flash_cards.urls'))
 ]
 
 if settings.DEBUG:
