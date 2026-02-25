@@ -1,0 +1,51 @@
+services:
+  keycloak:
+      container_name: exkart-keycloak
+      image: quay.io/keycloak/keycloak
+      user: "0:0"
+      environment:
+        - KC_BOOTSTRAP_ADMIN_USERNAME=admin
+        - KC_BOOTSTRAP_ADMIN_PASSWORD=admin
+        - KC_DB=mariadb
+        - KC_DB_PASSWORD=root
+        - KC_DB_USERNAME=root
+        - KC_DB_URL_HOST=db
+        - KC_DB_SCHEMA=keycloak
+        - KC_LOG_CONSOLE_LEVEL=all
+        - KC_FILE=/tmp/import/master-realm.json
+        - KC_OVERRIDE=true
+      ports:
+        - "7000:8080"
+      volumes:
+        - ./services/keycloak/instance:/opt/keycloak/data:Z
+      networks:
+        exkart-network:
+          aliases:
+            - keycloak
+      command:
+        - start-dev
+  db:
+    image: mariadb
+    container_name: exkart-db
+    restart: always
+    ports:
+      - "3306:3306"
+    networks:
+      exkart-network:
+        aliases:
+          - db
+    environment:
+      MARIADB_ROOT_PASSWORD: "root"
+      MARIADB_ROOT_HOST: "%"
+      MARIADB_USER: "admin"
+      MARIADB_PASSWORD: "admin"
+      MARIADB_DATABASE: "www-data"
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized" ]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+networks:
+  exkart-network:
