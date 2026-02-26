@@ -6,5 +6,5 @@ import 'src/core/appWidget.dart';
 void main() {
   final router = createRouter();
 
-  runApp(MaterialApp(home: const MyApp()));
+  runApp(MyApp());
 }
