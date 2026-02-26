@@ -1,7 +1,10 @@
+import 'package:exkartikulation/src/core/appRouter.dart';
 import 'package:flutter/material.dart';
 
 import 'src/core/appWidget.dart';
 
 void main() {
-  runApp(const MyApp());
+  final router = createRouter();
+
+  runApp(MaterialApp(home: const MyApp()));
 }

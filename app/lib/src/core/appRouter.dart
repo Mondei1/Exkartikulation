@@ -1,9 +1,9 @@
 import 'package:exkartikulation/src/features/login/loginView.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter createRouter() {
   return GoRouter(
-    restorationScopeId: 'exkartikulator_app_id',
     initialLocation: "/login",
     routes: [
       // ShellRoute(
@@ -18,10 +18,15 @@ GoRouter createRouter() {
       //   ],
       // ),
       // Without scaffold
-      GoRoute(
-        path: "/login",
-        name: "login",
-        builder: (context, state) => const LoginView(),
+      ShellRoute(
+        builder: (context, state, child) => Scaffold(body: child),
+        routes: [
+          GoRoute(
+            path: "/login",
+            name: "login",
+            builder: (context, state) => LoginView(),
+          ),
+        ],
       ),
     ],
   );

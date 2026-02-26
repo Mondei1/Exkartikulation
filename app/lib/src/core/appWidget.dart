@@ -9,6 +9,10 @@ class MyApp extends StatelessWidget {
     final router = createRouter();
 
     return MaterialApp.router(
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      ),
       restorationScopeId: 'exkartikulator_app_id',
 
       supportedLocales: const [Locale("de", '')],
