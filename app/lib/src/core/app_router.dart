@@ -1,5 +1,6 @@
 import 'package:exkartikulation/src/features/login/login_view.dart';
 import 'package:exkartikulation/src/features/stacks/stacks_view.dart';
+import 'package:exkartikulation/src/features/topbar/topbar_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -8,7 +9,7 @@ GoRouter createRouter() {
     initialLocation: "/login",
     routes: [
       ShellRoute(
-        builder: (context, state, child) => Scaffold(body: child),
+        builder: (context, state, child) => TopBarScaffold(body: child),
         routes: [
           // Example
           GoRoute(
