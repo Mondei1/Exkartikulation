@@ -4,7 +4,5 @@ import 'package:flutter/material.dart';
 import 'src/core/appWidget.dart';
 
 void main() {
-  final router = createRouter();
-
   runApp(MyApp());
 }
