@@ -1,4 +1,4 @@
-import 'package:exkartikulation/src/core/appRouter.dart';
+import 'package:exkartikulation/src/core/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 

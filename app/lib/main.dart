@@ -1,7 +1,6 @@
-import 'package:exkartikulation/src/core/appRouter.dart';
 import 'package:flutter/material.dart';
 
-import 'src/core/appWidget.dart';
+import 'src/core/app_widget.dart';
 
 void main() {
   runApp(MyApp());

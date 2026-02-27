@@ -1,4 +1,4 @@
-import 'package:exkartikulation/src/features/login/loginService.dart';
+import 'package:exkartikulation/src/features/login/login_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -24,6 +24,7 @@ class _LoginViewState extends State<LoginView> {
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       if (await service.isAuthorized()) {
+        // ignore: use_build_context_synchronously
         context.go("/stacks");
       }
     });
@@ -37,6 +38,7 @@ class _LoginViewState extends State<LoginView> {
     await service.login(usernameController.text, passwordController.text);
 
     if (await service.isAuthorized()) {
+      // ignore: use_build_context_synchronously
       context.go("/stacks");
     } else {
       usernameController.clear();
@@ -55,7 +57,7 @@ class _LoginViewState extends State<LoginView> {
           children: [
             SvgPicture.asset("assets/l.svg", width: 200),
             Text(
-              "Exkatikulation",
+              "Exkartikulation",
               style: Theme.of(context).textTheme.headlineLarge,
             ),
             const SizedBox(height: 24),

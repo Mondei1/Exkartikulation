@@ -1,5 +1,5 @@
-import 'package:exkartikulation/src/features/login/loginView.dart';
-import 'package:exkartikulation/src/features/stacks/stacksView.dart';
+import 'package:exkartikulation/src/features/login/login_view.dart';
+import 'package:exkartikulation/src/features/stacks/stacks_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

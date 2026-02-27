@@ -1,6 +1,5 @@
-import 'package:exkartikulation/src/features/login/loginService.dart';
+import 'package:exkartikulation/src/features/login/login_service.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class StacksView extends StatefulWidget {
