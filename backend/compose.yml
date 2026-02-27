@@ -39,7 +39,7 @@ services:
       MARIADB_ROOT_HOST: "%"
       MARIADB_USER: "admin"
       MARIADB_PASSWORD: "admin"
-      MARIADB_DATABASE: "www-data"
+      MARIADB_DATABASE: "keycloak"
     healthcheck:
       test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized" ]
       start_period: 10s
