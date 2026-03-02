@@ -11,7 +11,7 @@ const String clientSecret = String.fromEnvironment(
 const String authorizationEndpoint = String.fromEnvironment(
   'authorizationEndpoint',
   defaultValue:
-      'http://localhost:7000/realms/Exkartikulator/protocol/openid-connect/token',
+      'http://adrian_pc:7000/realms/Exkartikulator/protocol/openid-connect/token',
 );
 
 class LoginServiceFactory {

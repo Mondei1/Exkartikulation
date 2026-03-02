@@ -1,3 +1,4 @@
+import 'package:exkartikulation/src/features/ai/generare_view.dart';
 import 'package:exkartikulation/src/features/login/login_view.dart';
 import 'package:exkartikulation/src/features/stacks/stacks_view.dart';
 import 'package:exkartikulation/src/features/topbar/topbar_scaffold.dart';
@@ -6,7 +7,7 @@ import 'package:go_router/go_router.dart';
 
 GoRouter createRouter() {
   return GoRouter(
-    initialLocation: "/login",
+    initialLocation: "/generate",
     routes: [
       ShellRoute(
         builder: (context, state, child) => TopBarScaffold(body: child),
@@ -27,6 +28,16 @@ GoRouter createRouter() {
             path: "/login",
             name: "login",
             builder: (context, state) => LoginView(),
+          ),
+        ],
+      ),
+      ShellRoute(
+        builder: (context, state, child) => Scaffold(body: child),
+        routes: [
+          GoRoute(
+            path: "/generate",
+            name: "generate",
+            builder: (context, state) => GenerateView(),
           ),
         ],
       ),
